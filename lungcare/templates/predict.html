@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Output</title>
+</head>
+
+<body class="bg-primary">
+    {% include 'navbar.html' %}
+
+    <div class="container-fluid p-4">
+        <div class="container mt-3 p-4 bg-primary-subtle">
+            <h3 class="text-center fw-semibold">Predict Lung Cancer</h3>
+            <hr>
+            <form action="/output" method="post" class="row" id="form-3">
+                <input type="number" hidden value="3" name="form-num">
+                <div class="mb-3 col-md-4">
+                    <label for="Gender" class="form-label">Gender</label>
+                    <select name="Gender" id="Gender" class="form-select">
+                        <option value="1">Male</option>
+                        <option value="2">Female</option>
+                    </select>
+                </div>
+                <div class="mb-3 col-md-4">
+                    <label for="Age" class="form-label">Age</label>
+                    <input type="number" name="Age" id="Age" class="form-control">
+                </div>
+                <div class="mb-3 col-md-4">
+                    <label for="Smoking" class="form-label">Smoking</label>
+                    <select name="Smoking" id="Smoking" class="form-select">
+                        <option value="1">No</option>
+                        <option value="2">Yes</option>
+                    </select>
+                </div>
+                <div class="mb-3 col-md-4">
+                    <label for="Yellow_Fingers" class="form-label">Yellow Fingers</label>
+                    <select name="Yellow_Fingers" id="Yellow_Fingers" class="form-select">
+                        <option value="1">No</option>
+                        <option value="2">Yes</option>
+                    </select>
+                </div>
+                <div class="mb-3 col-md-4">
+                    <label for="Anxiety" class="form-label">Anxiety</label>
+                    <select name="Anxiety" id="Anxiety" class="form-select">
+                        <option value="1">No</option>
+                        <option value="2">Yes</option>
+                    </select>
+                </div>
+                <div class="mb-3 col-md-4">
+                    <label for="Peer_Pressure" class="form-label">Peer Pressure</label>
+                    <select name="Peer_Pressure" id="Peer_Pressure" class="form-select">
+                        <option value="1">No</option>
+                        <option value="2">Yes</option>
+                    </select>
+                </div>
+                <div class="mb-3 col-md-4">
+                    <label for="Chronic_Disease" class="form-label">Chronic Disease</label>
+                    <select name="Chronic_Disease" id="Chronic_Disease" class="form-select">
+                        <option value="1">No</option>
+                        <option value="2">Yes</option>
+                    </select>
+                </div>
+                <div class="mb-3 col-md-4">
+                    <label for="Fatigue" class="form-label">Fatigue</label>
+                    <select name="Fatigue" id="Fatigue" class="form-select">
+                        <option value="1">No</option>
+                        <option value="2">Yes</option>
+                    </select>
+                </div>
+                <div class="mb-3 col-md-4">
+                    <label for="Allergy" class="form-label">Allergy</label>
+                    <select name="Allergy" id="Allergy" class="form-select">
+                        <option value="1">No</option>
+                        <option value="2">Yes</option>
+                    </select>
+                </div>
+                <div class="mb-3 col-md-4">
+                    <label for="Wheezing" class="form-label">Wheezing</label>
+                    <select name="Wheezing" id="Wheezing" class="form-select">
+                        <option value="1">No</option>
+                        <option value="2">Yes</option>
+                    </select>
+                </div>
+                <div class="mb-3 col-md-4">
+                    <label for="Alcohol_Consuming" class="form-label">Alcohol Consuming</label>
+                    <select name="Alcohol_Consuming" id="Alcohol_Consuming" class="form-select">
+                        <option value="1">No</option>
+                        <option value="2">Yes</option>
+                    </select>
+                </div>
+                <div class="mb-3 col-md-4">
+                    <label for="Coughing" class="form-label">Coughing</label>
+                    <select name="Coughing" id="Coughing" class="form-select">
+                        <option value="1">No</option>
+                        <option value="2">Yes</option>
+                    </select>
+                </div>
+                <div class="mb-3 col-md-4">
+                    <label for="Shortness_of_Breath" class="form-label">Shortness of Breath</label>
+                    <select name="Shortness_of_Breath" id="Shortness_of_Breath" class="form-select">
+                        <option value="1">No</option>
+                        <option value="2">Yes</option>
+                    </select>
+                </div>
+                <div class="mb-3 col-md-4">
+                    <label for="Swallowing_Difficulty" class="form-label">Swallowing Difficulty</label>
+                    <select name="Swallowing_Difficulty" id="Swallowing_Difficulty" class="form-select">
+                        <option value="1">No</option>
+                        <option value="2">Yes</option>
+                    </select>
+                </div>
+                <div class="mb-3 col-md-4">
+                    <label for="Chest_Pain" class="form-label">Chest Pain</label>
+                    <select name="Chest_Pain" id="Chest_Pain" class="form-select">
+                        <option value="1">No</option>
+                        <option value="2">Yes</option>
+                    </select>
+                </div>
+                <hr>
+                <div class="d-flex justify-content-center">
+                    <button class="btn btn-success" type="submit">Predict</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+    {% include 'footer.html' %}
+
+
+</body>
+
+</html>

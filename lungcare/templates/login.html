@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .collapse.show {
+            height: 100% !important;
+        }
+    </style>
+    <title>Login | Register</title>
+</head>
+
+<body class="bg-primary">
+    {% include 'navbar.html' %}
+
+    <div class="container-fluid p-4">
+        <h3 class="text-center fw-semibold text-white">Login or register</h3>
+        <div class="row container-jflex">
+            <div class="col-md-5 m-2 p-4 bg-primary-subtle rounded overflow-hidden">
+                {% if regError %}
+                <div class="collapse" id='collapse-1'>
+                    {% else %}
+                    <div class="collapse show" id='collapse-1'>
+                        {% endif %}
+                        <h3 class="fw-semibold text-center">Login</h3>
+                        <hr>
+                        <form action="/login" method="post">
+                            <div class="mb-3">
+                                <label for="username" class="form-label">Username</label>
+                                <input required type="text" class="form-control" id='username' name="username">
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Password</label>
+                                <input required type="password" id='password' class="form-control" name="password">
+                            </div>
+                            {% if loginError: %}
+                            <div class="mb-3">
+                                <p class="text-danger">Error: {{ loginError }}</p>
+                            </div>
+                            {% endif %}
+                            <div class="mb-3 d-flex justify-content-end">
+                                <button type='submit' class="btn btn-success">Login</button>
+                            </div>
+                        </form>
+                    </div>
+                    {% if regError %}
+                    <div class="collapse show" id='collapse-1' style="height: 100%;">
+                        {% else %}
+                        <div class="collapse" id='collapse-1' style="height: 100%;">
+                            {% endif %}
+                            <div class="container-flex bg-img h-100">
+                                <div class="blur-filte container container-flex">
+                                    <p class="fs-5 p-3 bg-primary text-white rounded">
+                                        Already have an account ? <button class="btn btn-dark" data-bs-toggle="collapse"
+                                            href="#collapse-1" role="button" aria-expanded="false"
+                                            aria-controls="collapse-1">Login</button>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-5 m-2 p-4 rounded bg-primary-subtle overflow-hidden">
+                        {% if regError %}
+                        <div class="collapse show" id='collapse-1'>
+                            {% else %}
+                            <div class="collapse " id='collapse-1'>
+                                {% endif %}
+                                <h3 class="fw-semibold text-center">Register</h3>
+                                <hr>
+                                <form action="/register" method="post">
+                                    <div class="mb-3">
+                                        <label for="name" class="form-label">Username</label>
+                                        <input required type="text" class="form-control" name="name" id="name">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="email2" class="form-label">Email</label>
+                                        <input required type="email" class="form-control" name="email" id="email2">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="newPass" class="form-label">Create new password</label>
+                                        <input required type="password" class="form-control" name="newPass"
+                                            id="newPass">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="confPass" class="form-label">Confirm password</label>
+                                        <input required type="password" class="form-control" name="confPass"
+                                            id="confPass">
+                                    </div>
+                                    {% if regError: %}
+                                    <div class="mb-3">
+                                        <p class="text-danger">Error: {{ regError }}</p>
+                                    </div>
+                                    {% endif %}
+                                    <div class="mb-3 d-flex justify-content-end">
+                                        <button class="btn btn-success">Register</button>
+                                    </div>
+                                </form>
+                            </div>
+
+                            {% if regError: %}
+                            <div class="collapse" id='collapse-1' style="height: 100%;">
+                                {% else: %}
+                                <div class="collapse show" id='collapse-1' style="height: 100%;">
+                                    {% endif %}
+                                    <div class="container-flex bg-img h-100">
+                                        <div class="blur-filte container container-flex">
+                                            <p class="fs-5 p-3 bg-primary text-white rounded">
+                                                Don't have an account ?
+                                                <button class="btn btn-dark" data-bs-toggle="collapse"
+                                                    href="#collapse-1" role="button" aria-expanded="false"
+                                                    aria-controls="collapse-1">Register</button>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {% include 'footer.html' %}
+
+</body>
+
+</html>
